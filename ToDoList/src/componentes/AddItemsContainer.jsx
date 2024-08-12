@@ -14,7 +14,9 @@ const AddItemsContainer = ({ addToList }) => {
       <button
         className="sm:px-2 sm:w-1/3 font-semibold hover:text-green-900 hover:bg-slate-200"
         onClick={() => {
-          addToList(newTask);
+          if (newTask !== '') {
+            addToList(newTask);
+          }
         }}
       >
         Add
