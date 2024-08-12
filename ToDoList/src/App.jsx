@@ -17,13 +17,13 @@ function App() {
   };
 
   return (
-    <div className="bg-white shadow-lg py-3 px-5 rounded-md">
+    <div className="w-40 sm:w-[400px] lg:w-[800px] bg-white shadow-lg pb-5 pt-3 px-5 rounded-md">
       <div className="border-b border-slate-400">
-        <h1 className="sm:text-4xl text-3xl font-semibold pb-2">
-          Minha Lista de <br className="sm:hidden" /> Tarefas do dia
+        <h1 className="text-lg sm:text-4xl text-center lg:text-left font-semibold pb-2">
+          To Do's List
         </h1>
       </div>
-      <AddItemsContainer addToList={addToList}/>
+      <AddItemsContainer addToList={addToList} />
       <ItemsContainer taskList={taskList} removeFromList={removeFromList} />
     </div>
   );
