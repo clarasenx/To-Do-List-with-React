@@ -6,7 +6,7 @@ const AddItemsContainer = ({ addToList }) => {
       <input
         placeholder="Add task"
         type="text"
-        className="border rounded px-2 py-[1px] w-2/3"
+        className="border rounded px-[2px] sm:px-2 py-[1px] w-2/3"
         onChange={(evt) => {
           newTask = evt.target.value;
         }}
