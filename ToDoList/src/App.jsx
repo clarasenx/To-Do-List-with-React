@@ -15,13 +15,6 @@ function App() {
   const [selectedTasks, setSelectedTasks] = useState([]);
   const [currentDate, setCurrentDate] = useState(getDate());
 
-  const removeFromList = (item) => {
-    const newList = [...taskList];
-    const itemIndex = newList.indexOf(item);
-    newList.splice(itemIndex, 1);
-    setTaskList(newList);
-  };
-
   const addToList = (item) => {
     setTaskList([...taskList, item]);
   };
@@ -51,7 +44,6 @@ function App() {
       <AddItemsContainer addToList={addToList} />
       <ItemsContainer
         taskList={taskList}
-        removeFromList={removeFromList}
         toggleTaskSelection={toggleTaskSelection}
         deleteSelectedTasks={deleteSelectedTasks}
         selectedTasks={selectedTasks}

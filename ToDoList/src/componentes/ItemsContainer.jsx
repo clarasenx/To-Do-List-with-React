@@ -2,7 +2,6 @@ import TaskItem from "./TaskItem";
 
 const ItemsContainer = ({
   taskList,
-  removeFromList,
   toggleTaskSelection,
   selectedTasks,
   deleteSelectedTasks
@@ -12,7 +11,6 @@ const ItemsContainer = ({
       {taskList.map((t, idx) => (
         <TaskItem
           task={t}
-          removeFromList={removeFromList}
           toggleTaskSelection={toggleTaskSelection}
           isSelected={selectedTasks.includes(t)}
           key={`taskItem-${idx}`}

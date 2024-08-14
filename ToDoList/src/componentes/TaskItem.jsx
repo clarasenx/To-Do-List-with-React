@@ -1,6 +1,5 @@
 const TaskItem = ({
   task,
-  removeFromList,
   toggleTaskSelection,
   isSelected,
 }) => {
