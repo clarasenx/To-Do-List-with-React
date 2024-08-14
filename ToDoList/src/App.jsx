@@ -12,6 +12,7 @@ function getDate() {
 
 function App() {
   const [taskList, setTaskList] = useState(["Task de exemplo :P"]);
+  const [selectedTasks, setSelectedTasks] = useState([]);
   const [currentDate, setCurrentDate] = useState(getDate());
 
   const removeFromList = (item) => {
@@ -25,16 +26,36 @@ function App() {
     setTaskList([...taskList, item]);
   };
 
+  const toggleTaskSelection = (task) => {
+    if (selectedTasks.includes(task)) {
+      setSelectedTasks(selectedTasks.filter((t) => t !== task));
+    } else {
+      setSelectedTasks([...selectedTasks, task]);
+    }
+  };
+
+  const deleteSelectedTasks = () => {
+    const newList = taskList.filter((task) => !selectedTasks.includes(task));
+    setTaskList(newList);
+    setSelectedTasks([]);
+  };
+
   return (
     <div className="w-40 sm:w-[400px] lg:w-[800px] bg-white shadow-lg pb-5 pt-3 px-5 rounded-md">
       <div className="flex items-baseline justify-between border-b border-slate-400">
         <h1 className="text-lg sm:text-4xl text-center lg:text-left font-semibold pb-2">
           To Do's List
         </h1>
-        <p className='hidden sm:flex lg:text-lg font-medium'>{currentDate}</p>
+        <p className="hidden sm:flex lg:text-lg font-medium">{currentDate}</p>
       </div>
       <AddItemsContainer addToList={addToList} />
-      <ItemsContainer taskList={taskList} removeFromList={removeFromList} />
+      <ItemsContainer
+        taskList={taskList}
+        removeFromList={removeFromList}
+        toggleTaskSelection={toggleTaskSelection}
+        deleteSelectedTasks={deleteSelectedTasks}
+        selectedTasks={selectedTasks}
+      />
     </div>
   );
 }
