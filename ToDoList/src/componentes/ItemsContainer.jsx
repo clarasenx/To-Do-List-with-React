@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 import TaskItem from "./TaskItem";
 
 const ItemsContainer = ({
@@ -7,7 +7,7 @@ const ItemsContainer = ({
   selectedTasks,
   deleteSelectedTasks,
 }) => {
-  const [checked, setChecked] = useState(false)
+  const [checked, setChecked] = useState(false);
 
   return (
     <div className="flex flex-col items-center mt-4">
@@ -17,9 +17,15 @@ const ItemsContainer = ({
           name="borderInput"
           id="borderButton"
           checked={checked}
-          onClick={() => setChecked(!checked)}
+          onChange={() => setChecked(!checked)}
+          className="hover:cursor-pointer"
         />
-        <label htmlFor="borderButton">Add Border</label>
+        <label
+          className="font-semibold hover:cursor-pointer"
+          htmlFor="borderButton"
+        >
+          Add Border
+        </label>
       </div>
       {taskList.map((t, idx) => (
         <TaskItem
