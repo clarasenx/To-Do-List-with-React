@@ -7,7 +7,7 @@ const ItemsContainer = ({
   deleteSelectedTasks
 }) => {
   return (
-    <div className="flex flex-col mt-4 gap-2">
+    <div className="flex flex-col items-center mt-4 gap-2">
       {taskList.map((t, idx) => (
         <TaskItem
           task={t}
@@ -16,12 +16,12 @@ const ItemsContainer = ({
           key={`taskItem-${idx}`}
         />
       ))}
-        <button
-          className="px-4 py-2 mt-4 bg-red-500 text-white font-bold rounded-md hover:bg-red-700"
-          onClick={deleteSelectedTasks}
-        >
-          Delete
-        </button>
+      <button
+        className="sm:flex sm:w-1/3 justify-center px-4 py-2 mt-4 bg-zinc-500 text-white font-bold rounded-md hover:bg-red-700"
+        onClick={deleteSelectedTasks}
+      >
+        Delete
+      </button>
     </div>
   );
 };
