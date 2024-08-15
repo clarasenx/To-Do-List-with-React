@@ -2,9 +2,10 @@ const TaskItem = ({
   task,
   toggleTaskSelection,
   isSelected,
+  showBorder
 }) => {
   return (
-    <div className="flex w-full sm:px-6 text-wrap">
+    <div className={`flex w-full sm:px-6  py-2 text-wrap ${showBorder ? "border-b border-zinc-500" : ""}`}>
       <input
         type="checkbox"
         checked={isSelected}
